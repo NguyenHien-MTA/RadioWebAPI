@@ -1,0 +1,60 @@
+-- DB in SQL SERVER
+CREATE DATABASE Radio_app;
+
+USE Radio_app;
+--drop table TaiKhoan;
+
+create table Kenh(
+MaKenh int IDENTITY(1,1) primary key,
+Icon varchar(50),
+TenKenh nvarchar(50) ,
+LinkKenh varchar(50),
+MaLoaiKenh nvarchar(50)
+);
+
+create table TaiKhoan(
+MaTaiKhoan int IDENTITY(1,1) primary key,
+TenTaiKhoan varchar(50),
+MatKhau varchar(50),
+MaQuyen varchar(50)
+);
+
+create table MyChannel(
+idLike int IDENTITY(1,1) primary key,
+MaTaiKhoan int references TaiKhoan(MaTaiKhoan),
+MaKenh int references kenh(MaKenh)
+);
+
+
+-- DB mySQL
+CREATE DATABASE Radio_app;
+
+USE Radio_app;
+
+create table Kenh(
+MaKenh int auto_increment primary key,
+Icon varchar(50),
+TenKenh nvarchar(50) ,
+LinkKenh varchar(50),
+MaLoaiKenh nvarchar(50)
+);
+
+create table TaiKhoan(
+MaTaiKhoan int auto_increment primary key,
+TenTaiKhoan varchar(50),
+MatKhau varchar(50),
+MaQuyen varchar(50)
+);
+
+create table MyChannel(
+idLike int auto_increment primary key,
+MaTaiKhoan int references TaiKhoan(MaTaiKhoan),
+MaKenh int references kenh(MaKenh)
+);
+
+
+
+
+
+
+
